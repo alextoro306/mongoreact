@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Statistics from "./Pages/statistics";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
+import Phonebookapp from "./Pages/Phonebookapp";
+import styled from "styled-components";
+import LandingPage from "./Pages/LandingPage";
+
+
+const Button = styled.button`
+    background-color: #3949ab;
+    color:  white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    `
+
+    function clickMe(){
+      alert("You clicked me!");
+  }
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={ LandingPage } />
+        <Route exact path="/phonebook" component={ Phonebookapp } />
+        <Route exact path="/statistics" component={ Statistics } />
+        <Route><Redirect to="/" /></Route>
+      </Switch>
+    </Router>
   );
 }
 
