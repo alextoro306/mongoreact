@@ -11,11 +11,15 @@ const LandingPage: React.FC<LandingPageProps> = () => {
       Links For
       <p></p>
       <Link to="/statistics" >
-      FeedBack
+      Statistics
       </Link>
       <p></p>
       <Link to="/phonebook" >
       Phonebook
+      </Link>
+      <p></p>
+      <Link to="/reminderapp" >
+      Reminders
       </Link>
     </div>
   )

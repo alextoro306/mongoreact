@@ -1,5 +1,9 @@
 import "./App.css";
 import Statistics from "./Pages/statistics";
+import Phonebookapp from "./Pages/Phonebookapp";
+import styled from "styled-components";
+import LandingPage from "./Pages/LandingPage";
+import ReminderApp from "./Pages/ReminderApp"
 
 import {
   BrowserRouter as Router,
@@ -7,11 +11,6 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-
-import Phonebookapp from "./Pages/Phonebookapp";
-import styled from "styled-components";
-import LandingPage from "./Pages/LandingPage";
-
 
 const Button = styled.button`
     background-color: #3949ab;
@@ -32,6 +31,7 @@ function App() {
         <Route exact path="/" component={ LandingPage } />
         <Route exact path="/phonebook" component={ Phonebookapp } />
         <Route exact path="/statistics" component={ Statistics } />
+        <Route exact path="/reminderapp" component={ ReminderApp } />
         <Route><Redirect to="/" /></Route>
       </Switch>
     </Router>

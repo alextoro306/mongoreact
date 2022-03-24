@@ -2,7 +2,9 @@ import {useState} from 'react'
 import styled from "styled-components";
 import "./LandingPage.css"
 
+type statisticsProps = {
 
+}
 
 const Button = styled.button`
     background-color: #3949ab;
@@ -31,7 +33,6 @@ const Button = styled.button`
 function clickMe(){
     alert("You clicked me!");
 }
-
 
 export default function Statistics() {
     const [visible, setVisible] = useState<boolean>(false);
@@ -79,5 +80,5 @@ export default function Statistics() {
             </div>
         </div>
 
-    );
+    )
 }
