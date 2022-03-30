@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {idText} from 'typescript';
 import axios from 'axios';
 
 
@@ -73,13 +71,13 @@ class App extends React.Component {
   addReminder = (e) => {
     e.preventDefault();
     let reminders = this.state.reminders
-    if (reminders.some(r => this.state.newName == r.name)) {
+    if (reminders.some(r => this.state.newName === r.name)) {
       alert("That reminder already exists. You cannot add the same reminder twice.")
       return;
     }
     
     let date = new Date(this.state.newDate)
-    if (date == "Invalid Date") {
+    if (date === "Invalid Date") {
       alert("Wrong date :( Use this format, yyyy-mm-ddTHH:MM")
       return;
     }
@@ -104,7 +102,7 @@ class App extends React.Component {
     if (!window.confirm("Do you really want to remove this item?"))
       return
     axios.delete("http://localhost:3001/api/reminders/" + itemId).then(() => {
-        let reminders = this.state.reminders.filter(r => r.id != itemId)
+        let reminders = this.state.reminders.filter(r => r.id !== itemId)
         this.setState({ reminders: reminders });
       })
   }
