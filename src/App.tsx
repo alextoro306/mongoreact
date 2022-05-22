@@ -3,7 +3,7 @@ import Statistics from "./Pages/statistics";
 import Phonebookapp from "./Pages/Phonebookapp";
 import styled from "styled-components";
 import LandingPage from "./Pages/LandingPage";
-import ReminderApp from "./Pages/ReminderApp"
+import ReminderApp from "./Pages/Reminder"
 
 import {
   BrowserRouter as Router,
